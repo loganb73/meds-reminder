@@ -1,7 +1,7 @@
 int redLedPin = 12;
-int redBtn = 2;
+int redBtn = 4;
 int greenLedPin = 8;
-int greenBtn = 4;
+int greenBtn = 2;
 unsigned long redTime = 0;
 unsigned long greenTime = 32400000; //nine hours away from turn on time (on at 9pm this blink happens at 6am)
 unsigned long onInterval = 86400000; //turn each light on every interval ms
@@ -43,12 +43,12 @@ void loop() {
   }
 
   //turn off red led when red btn pressed
-  if(digitalRead(redBtn) == 0) {
+  if(digitalRead(redBtn) == 1) {
     digitalWrite(redLedPin, LOW);
   }
 
   //turn off green led when green btn pressed
-  if(digitalRead(greenBtn) == 0) {
+  if(digitalRead(greenBtn) == 1) {
     digitalWrite(greenLedPin, LOW);
   }
 
